@@ -1,0 +1,120 @@
+/* General styles for the sidebar */
+nav {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Light gray for the sidebar background */
+  width: 9.5rem;
+  height: 100vh; /* Ensure the sidebar takes full height */
+  position: absolute; /* Fix the sidebar on the left */
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+}
+
+/* Unordered list styling */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* List item styling */
+.menu-item {
+  margin-bottom: 1rem;
+}
+
+/* Styling for links */
+a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #6c757d; /* Gray color for links */
+  font-size: 0.7rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem; /* Rounded corners */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover effect for links */
+a:hover {
+  background-color: #e9ecef; /* Light gray on hover */
+  color: #495057; /* Darker gray on hover */
+}
+
+/* Active link styling */
+.active-link {
+  background-color: #1d4ed8; /* Blue for active links */
+  color: white !important; /* White text for active links */
+  font-weight: bold; /* Bold text */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Icon styling */
+i {
+  margin-right: 12px;
+  font-size: 0.8rem; /* Slightly larger icons */
+  color: inherit; /* Match text color */
+}
+
+/* Additional hover effect for icons */
+a:hover i {
+  color: #495057; /* Dark gray on hover */
+}
+
+/* Mobile View Styles */
+@media (max-width: 768px) {
+  /* Hide the sidebar by default on mobile */
+  .sidebar {
+    display: none;
+    position: absolute; /* Change to absolute to prevent shifting */
+    top: 0;
+    left: 0;
+    background-color: #f8f9fa;
+    width: 100%;
+    height: 100vh;
+    z-index: 20;
+  }
+
+  /* Sidebar items are displayed when the hamburger icon is clicked */
+  .sidebar.active {
+    display: block;
+  }
+
+  /* Hamburger icon for mobile view */
+  .hamburger {
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+  }
+
+  /* Ensure the header layout is correct */
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+}
+
+/* Tablet and Laptop View (Larger than mobile screens) */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none; /* Hide hamburger icon on tablets/laptops */
+  }
+
+  .sidebar {
+    display: block; /* Always show sidebar */
+    position: fixed;
+    top: 57px;
+    left: 0;
+    width: 9.5rem;
+    height: 100vh;
+    background-color: #f8f9fa;
+    z-index: 10; /* Ensure it stays below the header */
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+  }
+}
