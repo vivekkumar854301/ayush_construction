@@ -1,0 +1,65 @@
+.layout-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header: auto height, Main Content + Sidenav: fill space, Footer: auto height */
+  grid-template-columns: 12% 90%; /* Sidenav: 10% width, Content: 90% width */
+  grid-template-areas:
+    "header header"
+    "sidenav main"
+    "footer footer";
+  height: 100vh; /* Full viewport height */
+  --bs-gutter-x: 0; /* Remove horizontal gutter spacing */
+}
+
+.header {
+  grid-area: header;
+  background-color: #f8f9fa; /* Optional background for header */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.sidenav {
+  grid-area: sidenav;
+  background-color: #f0f0f0; /* Optional background for sidenav */
+  overflow-y: auto; /* Scrollable if content exceeds height */
+  border-right: 1px solid #dee2e6; /* Border for separation */
+}
+
+.main-content {
+  grid-area: main;
+  padding: 16px; /* Optional padding for content */
+  overflow-y: auto; /* Enable scrolling for content overflow */
+  background-color: #ffffff; /* Optional background for main content */
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #f8f9fa; /* Optional background for footer */
+  text-align: center; /* Centered footer text */
+  padding: 10px 0; /* Padding for footer */
+}
+
+@media (max-width: 768px) {
+  .layout-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-areas:
+      "header"
+      "sidenav"
+      "main"
+      "footer";
+  }
+
+  .sidenav {
+    width: 100%; /* Full width for sidenav in stacked layout */
+  }
+}
+
+.sidenav a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.sidenav a:hover {
+  background-color: #e0e0e0;
+}

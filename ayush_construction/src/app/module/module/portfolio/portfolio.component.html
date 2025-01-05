@@ -1,0 +1,50 @@
+<div class="py-5 bg-light">
+  <div class="container">
+    <h1 class="text-center mb-4">Our Portfolio</h1>
+
+    <!-- Filter Buttons -->
+    <div class="d-flex justify-content-center flex-wrap mb-4">
+      <button
+        *ngFor="let category of categories"
+        (click)="setFilter(category)"
+        class="btn me-2 mb-2 btn-outline-primary text-medium"
+        [class.active]="filter() === category"
+      >
+        <i class="fa-solid fa-filter me-2 icon-sm"></i>
+        {{ category }}
+      </button>
+    </div>
+
+    <!-- Project Grid -->
+    <div class="row g-4">
+      <div *ngFor="let project of filteredProjects()" class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="position-relative image-container">
+            <img
+              [src]="project.image"
+              [alt]="project.title"
+              class="card-img-top rounded-top img-fluid"
+            />
+            <div class="image-overlay">
+              <h5 class="text-white fw-bold">{{ project.title }}</h5>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ project.title }}</h5>
+            <p class="card-text text-muted">{{ project.description }}</p>
+            <ul class="list-unstyled mb-0 small text-muted">
+              <li>
+                <i class="fa-solid fa-location-dot me-2 icon-sm"></i>
+                <strong>Location:</strong> {{ project.location }}
+              </li>
+              <li>
+                <i class="fa-solid fa-calendar-days me-2 icon-sm"></i>
+                <strong>Completed:</strong> {{ project.completionDate }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
