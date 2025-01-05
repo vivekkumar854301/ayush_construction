@@ -1,15 +1,15 @@
-<nav class="bg-gray-800 text-white h-full w-64 fixed left-0 top-0 overflow-y-auto">
-  <div class="p-1">
-    <ul class="space-y-2">
-      <li *ngFor="let item of menuItems" class="mb-8"> <!-- Add margin of 2rem for each item -->
+<nav class="bg-gray-800 text-white h-screen w-66 fixed left-0 top-0 overflow-y-auto overflow-x-hidden">
+  <div class="p-4">
+    <ul>
+      <li *ngFor="let item of menuItems" class="menu-item">
         <a
-           [routerLink]="item.link"
-           routerLinkActive="bg-gray-700"
-           [routerLinkActiveOptions]="{ exact: false }"
-           class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-200 flex items-center no-underline">
-          <!-- Font Awesome Icon -->
-          <span class="fa {{ item.icon }}"></span>
-          {{ item.title }}
+          [routerLink]="item.link"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="flex items-center px-3 py-2 rounded-lg transition-all duration-200 hover:bg-gray-700"
+        >
+          <i class="{{ item.icon }} mr-2 text-base"></i> <!-- Adjusted margin and icon size -->
+          <span>{{ item.title }}</span>
         </a>
       </li>
     </ul>

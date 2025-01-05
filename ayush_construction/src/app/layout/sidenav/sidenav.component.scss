@@ -1,10 +1,83 @@
+/* General styles for the sidebar */
+nav {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Light gray for the sidebar background */
+  width: 9.5rem;
+}
+
+/* Unordered list styling */
 ul {
-    list-style-type: none;
-    padding-left: 0.5rem;
-    margin-bottom: 0.5rem;
+  list-style-type: none;
+  padding: 0;
+  // margin: 0;
+  margin-top: 5rem;
+}
+
+/* List item styling */
+.menu-item {
+  margin-bottom: 1rem;
+}
+
+/* Styling for links */
+a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #6c757d; /* Gray color for links */
+  font-size: 0.7rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem; /* Rounded corners */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover effect for links */
+a:hover {
+  background-color: #e9ecef; /* Light gray on hover */
+  color: #495057; /* Darker gray on hover */
+}
+
+/* Active link styling */
+.active-link {
+  background-color: #1d4ed8; /* Blue for active links */
+  color: white !important; /* White text for active links */
+  font-weight: bold; /* Bold text */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Icon styling */
+i {
+  margin-right: 12px;
+  font-size: 0.8rem; /* Slightly larger icons */
+  color: inherit; /* Match text color */
+}
+
+/* Additional hover effect for icons */
+a:hover i {
+  color: #495057; /* Dark gray on hover */
+}
+
+/* Mobile (Phone) View: Switch to horizontal header navigation */
+@media (max-width: 768px) {
+  nav {
+    display: none; /* Hide the sidebar on small screens */
   }
-  
-  li {
-    list-style: none;
+
+  /* Header navigation for small screens */
+  .header-nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
   }
-  
+
+  .header-nav a {
+    font-size: 1rem; /* Slightly larger text for the header */
+    padding: 0.75rem 1rem;
+  }
+
+  .header-nav a:hover {
+    background-color: #e9ecef;
+    color: #495057;
+  }
+}

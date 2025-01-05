@@ -13,7 +13,8 @@ export class SidenavComponent {
     { title: 'Portfolio', link: '/home/portfolio', icon: 'fa-brands fa-creative-commons-nd' },
     { title: 'Contact', link: '/home/contact', icon: 'fa-solid fa-phone' }
   ];
-  isSidebarCollapsed = false;
+  // isSidebarCollapsed = false;
+  isSidebarCollapsed: boolean = false;
 
   toggleSidebar() {
     this.isSidebarCollapsed = !this.isSidebarCollapsed;
